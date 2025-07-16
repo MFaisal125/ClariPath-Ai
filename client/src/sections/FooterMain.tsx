@@ -67,7 +67,7 @@ export default function FooterMain() {
               className="transition-colors hover:text-white/80 text-white/60"
               href="/blog"
             >
-              Blog
+              Blogs
             </a>
             <a
               className="transition-colors hover:text-white/80 text-white/60"
