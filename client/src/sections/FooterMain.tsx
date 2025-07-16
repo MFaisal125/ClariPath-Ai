@@ -15,42 +15,70 @@ export default function FooterMain() {
             </Link>
           </div>
           <div>
-            Product by{' '}
-            <span className="text-sky-500 font-medium">Error505</span>
+            Product by{" "}
+            <a
+              target="__blank"
+              href="https://www.revenuerocket.site"
+              rel="noopener noreferrer"
+            >
+              <span className="text-sky-500 font-medium">Revenue Rocket</span>
+            </a>
           </div>
           <div className="mt-2">
-            contact at{' '}
+            contact at{" "}
             <a
               className="text-sky-500 font-medium"
               target="__blank"
               href="#"
               rel="noopener noreferrer"
             >
-              @craftAI
+              @Clari Path AI
             </a>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 items-start mt-10 md:mt-0">
           <div className="flex justify-center space-y-4 flex-col mt-4">
-            <a className="transition-colors hover:text-white/80 text-white/60" href="#career-advisor">
+            <a
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="/advisor"
+            >
               AI Career Advisor
             </a>
-            <a className="transition-colors hover:text-white/80 text-white/60" href="#roadmap">
+            <a
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="/roadmap"
+            >
               Roadmap for Success
             </a>
-            <a className="transition-colors hover:text-white/80 text-white/60" href="#portfolio-generator">
+            <a
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="/portfolios"
+            >
               Portfolio Generator
             </a>
-            <a className="transition-colors hover:text-white/80 text-white/60" href="#interview-prep">
+
+            <Link
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="/interviewbot"
+            >
               AI Interview Prep
-            </a>
-            <a className="transition-colors hover:text-white/80 text-white/60" href="/blog">
+            </Link>
+            <a
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="/blog"
+            >
               Blog
             </a>
-            <a className="transition-colors hover:text-white/80 text-white/60" href="#faqs">
+            <a
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="#faqs"
+            >
               FAQs
             </a>
-            <a className="transition-colors hover:text-white/80 text-white/60" href="#testimonials">
+            <a
+              className="transition-colors hover:text-white/80 text-white/60"
+              href="#testimonials"
+            >
               Testimonials
             </a>
           </div>
