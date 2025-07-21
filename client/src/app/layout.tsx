@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Career Craft AI",
     description:
-      "Empowering your career journey with AI-powered tools like career advising, roadmap generation, portfolio builder, and interview preparation.",
+      "Empowering your career journey with AI-powered tools like career advising, roadmap generation, portfolio builder, and interview preparations.",
     type: "website",
   },
 };
