@@ -14,7 +14,6 @@ app.use(
       "http://localhost:3000",
       "https://clari-path-ai-agent.vercel.app",
       "http://localhost:5173",
-      "https://clari-path-ai.vercel.app",
     ],
     methods: "GET, POST, PUT, DELETE",
     allowedHeaders: "Content-Type",
