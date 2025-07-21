@@ -759,7 +759,7 @@ export default function Chatbot() {
                         size={20}
                       />
                       <span className="text-gray-300">
-                        Generating professional advice...
+                        Generating professional advice....
                       </span>
                     </div>
                   </div>
