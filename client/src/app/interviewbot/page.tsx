@@ -525,7 +525,7 @@ export default function NewInterviewPage() {
           {/* Footer */}
           <div className="mt-4 lg:mt-6 text-center space-y-1.5">
             <p className="text-gray-500 text-xs">
-              Your interview session will be saved and you can continue anytime
+              Your interview session will be saved and you can continue anytime.
             </p>
             <div className="flex items-center justify-center gap-3 text-gray-600 text-xs">
               <span>✓ AI-Powered Questions</span>
