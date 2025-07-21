@@ -7,10 +7,7 @@ import Tools from "@/sections/Tools";
 import { Userflow } from "@/sections/Userflow";
 import { Gemini } from "@/sections/Gemini";
 
-
-
 export default function Home() {
-
   return (
     <>
       <section id="home" aria-label="Hero Section">

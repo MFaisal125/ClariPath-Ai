@@ -1,3 +1,50 @@
+// const express = require("express");
+// const cors = require("cors");
+// const dotenv = require("dotenv");
+// const connectMongoDB = require("./DataBase/ConnectMongoDB");
+
+// dotenv.config();
+// const app = express();
+
+// // CORS Configuration
+// app.use(
+//   cors({
+//     origin: [
+//       "https://ai-coach-career.vercel.app",
+//       "http://localhost:3000",
+//       "https://clari-path-ai-agent.vercel.app",
+//       "http://localhost:5173",
+//     ],
+//     methods: "GET, POST, PUT, DELETE",
+//     allowedHeaders: "Content-Type",
+//     credentials: true,
+//   })
+// );
+
+// // Middleware
+// app.use(express.json());
+
+// // Routes
+// const UserRouter = require("./routes/User");
+// app.use("/user", UserRouter);
+
+// const PORT = process.env.PORT || 5005;
+
+// // Connect to MongoDB and Start Server
+// connectMongoDB()
+//   .then(() => {
+//     app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+//   })
+//   .catch((error) => {
+//     console.error("❌ MongoDB Connection Failed:", error);
+//     process.exit(1);
+//   });
+
+// // Default Route
+// app.get("/", (req, res) => {
+//   res.send("🚀 Welcome to Career Craft AI Backend");
+// });
+
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -6,23 +53,28 @@ const connectMongoDB = require("./DataBase/ConnectMongoDB");
 dotenv.config();
 const app = express();
 
-// CORS Configuration
+// Professional CORS Configuration
+const allowedOrigins = [
+  "https://clari-path-ai-agent.vercel.app",
+  "https://ai-coach-career.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:5173",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: [
-      "https://ai-coach-career.vercel.app",
-      "http://localhost:3000",
-      "https://clari-path-ai-agent.vercel.app",
-      "http://localhost:5173",
-    ],
-    methods: "GET, POST, PUT, DELETE",
-    allowedHeaders: "Content-Type",
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
+    optionsSuccessStatus: 200,
   })
 );
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
 const UserRouter = require("./routes/User");
@@ -30,10 +82,12 @@ app.use("/user", UserRouter);
 
 const PORT = process.env.PORT || 5005;
 
-// Connect to MongoDB and Start Server
+// Server Initialization
 connectMongoDB()
   .then(() => {
-    app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
   })
   .catch((error) => {
     console.error("❌ MongoDB Connection Failed:", error);
@@ -42,5 +96,8 @@ connectMongoDB()
 
 // Default Route
 app.get("/", (req, res) => {
-  res.send("🚀 Welcome to Career Craft AI Backend");
+  res.json({
+    message: "🚀 Career Craft AI Backend",
+    status: "Active",
+  });
 });

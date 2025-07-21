@@ -34,7 +34,6 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-
       <MyProvider>
         <html lang="en">
           <body
